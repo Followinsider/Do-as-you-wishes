@@ -275,6 +275,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 
-- 了解响应式布局，参考[[Project-Management-Dashboard-UI](https://github.com/peter-kimanzi/Project-Management-Dashboard-UI)](https://github.com/peter-kimanzi/Project-Management-Dashboard-UI)
+- 了解响应式布局，参考[Project-Management-Dashboard-UI](https://github.com/peter-kimanzi/Project-Management-Dashboard-UI)
 
 
