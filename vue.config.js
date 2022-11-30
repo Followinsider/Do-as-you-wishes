@@ -17,7 +17,7 @@ const options = {
 const themePlugin = new AntDesignThemePlugin(options);
 
 module.exports = defineConfig({
-  // publicPath: "/Do-as-you-wishes/",
+  publicPath: './',
   transpileDependencies: true,
   lintOnSave: false,
   css: {
@@ -31,22 +31,22 @@ module.exports = defineConfig({
     plugins: [themePlugin, 
       // new webpack.IgnorePlugin(/^\.\/locale$/,/moment$/)
       new webpack.IgnorePlugin({resourceRegExp: /^\.\/locale$/, contextRegExp: /moment$/},),
-      new webpack.DllReferencePlugin({
-          context: process.cwd(),
-          manifest: require(`./public/vendor/antd-manifest.json`)
-      }),
-      new webpack.DllReferencePlugin({
-          context: process.cwd(),
-          manifest: require(`./public/vendor/echarts-manifest.json`)
-      }),
-      new webpack.DllReferencePlugin({
-          context: process.cwd(),
-          manifest: require(`./public/vendor/lodash-manifest.json`)
-      }),
-      new webpack.DllReferencePlugin({
-          context: process.cwd(),
-          manifest: require(`./public/vendor/vue-manifest.json`)
-      }),
+      // new webpack.DllReferencePlugin({
+      //     context: process.cwd(),
+      //     manifest: require(`./public/vendor/antd-manifest.json`)
+      // }),
+      // new webpack.DllReferencePlugin({
+      //     context: process.cwd(),
+      //     manifest: require(`./public/vendor/echarts-manifest.json`)
+      // }),
+      // new webpack.DllReferencePlugin({
+      //     context: process.cwd(),
+      //     manifest: require(`./public/vendor/lodash-manifest.json`)
+      // }),
+      // new webpack.DllReferencePlugin({
+      //     context: process.cwd(),
+      //     manifest: require(`./public/vendor/vue-manifest.json`)
+      // }),
     ],
     resolve: {
       alias: {
@@ -69,7 +69,7 @@ module.exports = defineConfig({
   devServer: {
     proxy: {
       "/api": {
-        target: "http://localhost:5500",
+        target: "http://localhost:8080",
         bypass: function(req, res) {
           if (req.headers.accept.indexOf("html") !== -1) {
             return "/index.html";

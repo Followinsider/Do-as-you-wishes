@@ -16,7 +16,7 @@
 						<div class="item-status" v-show="loveLabels.length">
 							<span class="status-number">
 								<a-dropdown>
-									<span ref="loveLabel">{{loveLabel}}</span>
+									<span ref="loveLabel">{{loveLabel}}<a-icon type="down" id="chooseIcon"/></span>
 									<a-menu slot="overlay" @click="chooseStarType">
 										<a-menu-item :key="item" v-for="item in loveLabels">
 											{{item}}
@@ -332,9 +332,12 @@ export default {
 		},
 		starList(e, i) {
 			this.selectedMap[i] = e.target.checked;
-			// this.list = JSON.parse(localStorage.getItem('list'));
-
-			this.selectedList = this.list.filter(item => this.selectedMap[item.id] || false);
+			if (this.chooseLabel !== '全部') {
+				// 这里将会丢失之前主动添加的color && probability字段
+				this.selectedList = JSON.parse(localStorage.getItem('list')).filter(item => this.selectedMap[item.id] || false);
+			}else {
+				this.selectedList = this.list.filter(item => this.selectedMap[item.id] || false);
+			}
 		
 			const loveLabelsMap = {};
 			// 为返回数据主动添加字段，仅项目演示，实际开发遵守规范
@@ -411,6 +414,8 @@ export default {
 							this.tempId = item.id;
 							this.moveStar();
 						}
+						this.loveLabels = [];
+						console.log(this.loveLabels);
 						this.$message.success('删除成功');
 					}).catch(() => this.$message.info('暂时没有可删除题目'));
 				},
