@@ -156,8 +156,9 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
+  // mode: "history",
+  // base: process.env.BASE_URL,
+  // base: "/Do-as-you-wishes/",
   routes,
 });
 

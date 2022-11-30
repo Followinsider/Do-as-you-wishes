@@ -17,6 +17,7 @@ const options = {
 const themePlugin = new AntDesignThemePlugin(options);
 
 module.exports = defineConfig({
+  // publicPath: "/Do-as-you-wishes/",
   transpileDependencies: true,
   lintOnSave: false,
   css: {
