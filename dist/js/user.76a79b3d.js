@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkant_design_vue_pro"]=self["webpackChunkant_design_vue_pro"]||[]).push([[378],{921:function(n,u,t){t.r(u),t.d(u,{default:function(){return _}});var e=function(){var n=this,u=n._self._c;return u("div",[n._v(" 登录页 ")])},r=[],l={},i=l,s=t(1001),f=(0,s.Z)(i,e,r,!1,null,null,null),_=f.exports},47826:function(n,u,t){t.r(u),t.d(u,{default:function(){return _}});var e=function(){var n=this,u=n._self._c;return u("div",[n._v(" 注册页 ")])},r=[],l={},i=l,s=t(1001),f=(0,s.Z)(i,e,r,!1,null,null,null),_=f.exports}}]);
+//# sourceMappingURL=user.76a79b3d.js.map
